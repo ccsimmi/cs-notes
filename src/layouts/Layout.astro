@@ -13,7 +13,46 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-        <h1>{title}</h1>
-		<slot />
+        <a href="/">Home</a>
+        <main>
+            <h1>{title}</h1>
+		    <slot />
+        </main>
 	</body>
 </html>
+
+<style is:global>
+    :root {
+        --text-primary: #202020;
+        --text-secondary: #838383;
+        font-size: 16px;
+    }
+
+    html {
+        font-family: sans-serif;
+        color: var(--text-primary);
+        margin: 2rem;
+    }
+
+    p {
+        line-height: 1.5;
+        margin: 0 0 1rem;
+        max-width: 70ch;
+    }
+
+    small {
+        color: var(--text-secondary);
+    }
+
+    ol {
+        margin: 0 0 3rem;
+    }
+
+    h2 {
+        margin-top: 3rem;
+    }
+
+    li {
+        margin: 1.6rem 0;
+    }
+</style>
